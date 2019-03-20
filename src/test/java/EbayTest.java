@@ -1,3 +1,4 @@
+import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -115,5 +116,10 @@ public class EbayTest {
         System.out.println("9. Проверьте, что вы успешно вышли из под учетной записи.");
         String exit_caption = driver.findElementByXPath("//*[@id=\"AreaTitle\"]/div/table/tbody/tr/td/div/div[2]/div/h1/span").getText();
         Assert.assertTrue(exit_caption.contains("Выход успешно выполнен"));
+    }
+
+    @AfterClass
+    public static void afterClass(){
+        driver.close();
     }
 }
